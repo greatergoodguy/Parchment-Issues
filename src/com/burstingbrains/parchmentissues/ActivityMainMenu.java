@@ -22,6 +22,15 @@ public class ActivityMainMenu extends Activity {
 			}
 		});
 		
+		Button buttonGPVZoom = (Button) findViewById(R.id.mainmenu_gpvZoom);
+		buttonGPVZoom.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(), ActivityGPVZoom.class);
+				startActivity(intent);
+			}
+		});
+		
 		Button buttonIssue1 = (Button) findViewById(R.id.mainmenu_issue1);
 		buttonIssue1.setOnClickListener(new View.OnClickListener() {
 			@Override

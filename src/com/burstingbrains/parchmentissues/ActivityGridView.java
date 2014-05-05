@@ -1,5 +1,7 @@
 package com.burstingbrains.parchmentissues;
 
+import com.burstingbrains.parchmentissues.toybox.AdapterRectangle;
+
 import android.os.Bundle;
 import android.widget.GridView;
 

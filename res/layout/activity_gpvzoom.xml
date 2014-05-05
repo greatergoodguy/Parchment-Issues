@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.burstingbrains.parchmentissues.toybox.GridPatternView_WithPinchZoom 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gpvzoom_gpv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarAlwaysDrawHorizontalTrack="true"
+    android:scrollbars="horizontal"
+    app:cellSpacing="4dp"
+    app:isCircularScroll="false"
+    app:orientation="vertical"
+    app:ratio="0.5"
+    app:snapPosition="onScreen"
+    app:snapToPosition="false" />

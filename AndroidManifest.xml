@@ -31,6 +31,10 @@
             android:name=".ActivityGridView"
             android:label="Grid View" />
         
+        <activity
+            android:name=".ActivityGPVZoom"
+            android:label="GPV Zoom" />
+        
     </application>
 
 </manifest>
