@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.burstingbrains.parchmentissues.R;
 
@@ -43,8 +44,11 @@ public class AdapterRectangle extends BaseAdapter {
 				
 		if (convertView == null) {
 			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.view_rectangle_2, null);
+			convertView = inflater.inflate(R.layout.view_rectangle2, null);
 		}
+		
+		TextView tvText = (TextView) convertView.findViewById(R.id.view_rectangle2_text);
+		tvText.setText("Position: " + position);
 		
 		return convertView;
 	}
