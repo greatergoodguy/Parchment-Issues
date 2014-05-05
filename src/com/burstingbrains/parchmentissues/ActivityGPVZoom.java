@@ -5,6 +5,7 @@ import java.util.List;
 
 import mobi.parchment.widget.adapterview.gridpatternview.GridPatternItemDefinition;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.ScaleGestureDetector;
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener;
@@ -56,6 +57,8 @@ public class ActivityGPVZoom extends ActivityMainMenu {
     
     ZoomLevel zoomLevel = ZoomLevel.ZOOM_DEFAULT;
     
+    Handler handler = new Handler();
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +89,19 @@ public class ActivityGPVZoom extends ActivityMainMenu {
         
         zoomDefault();
     }
+    
+    @Override
+    public void onResume() {
+    	super.onResume();
+    	handler.post(runnableTicker);
+    }
+    
+    @Override
+    public void onPause() {
+    	super.onPause();
+    	handler.removeCallbacks(runnableTicker);
+    }
+    
     
     // =============
     // Zoom Methods
@@ -192,6 +208,17 @@ public class ActivityGPVZoom extends ActivityMainMenu {
 		
         adapter.setSizeAndNotifyDataSetChanged(7);	
     }
+    
+	// ====================
+	// Runnable
+	// ====================
+	private Runnable runnableTicker = new Runnable() {
+		@Override public void run() {
+			Log.d("ActivityGPVZoom", "tick()");
+			adapter.notifyDataSetChanged();
+			handler.postDelayed(runnableTicker, 1000);
+		}
+	};
     
     // ==================================
     // Simple On Scale Gesture Listener
