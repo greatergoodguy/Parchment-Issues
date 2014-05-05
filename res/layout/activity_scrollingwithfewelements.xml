@@ -6,9 +6,8 @@
     android:orientation="vertical" >
     
     <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This grid is scrollable. It should not be scrollable."/>
+        style="@style/wrap"
+        android:text="Having a view above a GridPatternView seems to cause issues with the fling gesture on the GridPatternView."/>
     
     <mobi.parchment.widget.adapterview.gridpatternview.GridPatternView
         android:id="@+id/issue1_gpv"

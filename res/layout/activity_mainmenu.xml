@@ -29,10 +29,10 @@
         android:text="Grid Pattern View Zoom" />
     
     <Button
-        android:id="@+id/mainmenu_issue1"
+        android:id="@+id/mainmenu_scrollingWithFewElements"
         android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="4dp"
-        android:text="Issue 1" />
+        android:text="Scrolling with few elements" />
     
 </LinearLayout>

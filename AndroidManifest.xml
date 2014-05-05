@@ -24,8 +24,8 @@
         </activity>
         
         <activity
-            android:name=".ActivityIssue1"
-            android:label="Issue 1" />
+            android:name=".ActivityScrollingWithFewElements"
+            android:label="Scrolling With Few Elements" />
         
         <activity
             android:name=".ActivityGridView"

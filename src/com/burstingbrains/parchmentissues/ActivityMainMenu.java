@@ -31,11 +31,11 @@ public class ActivityMainMenu extends Activity {
 			}
 		});
 		
-		Button buttonIssue1 = (Button) findViewById(R.id.mainmenu_issue1);
-		buttonIssue1.setOnClickListener(new View.OnClickListener() {
+		Button buttonScrollingWithFewElements = (Button) findViewById(R.id.mainmenu_scrollingWithFewElements);
+		buttonScrollingWithFewElements.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(getApplicationContext(), ActivityIssue1.class);
+				Intent intent = new Intent(getApplicationContext(), ActivityScrollingWithFewElements.class);
 				startActivity(intent);
 			}
 		});

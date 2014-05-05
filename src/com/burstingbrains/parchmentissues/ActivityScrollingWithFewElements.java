@@ -10,12 +10,12 @@ import mobi.parchment.widget.adapterview.gridpatternview.GridPatternView;
 import android.os.Bundle;
 import android.widget.BaseAdapter;
 
-public class ActivityIssue1 extends ActivityMainMenu {
+public class ActivityScrollingWithFewElements extends ActivityMainMenu {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_issue1);
+		setContentView(R.layout.activity_scrollingwithfewelements);
 		
 		final GridPatternView<BaseAdapter> gridPatternView = (GridPatternView<BaseAdapter>) findViewById(R.id.issue1_gpv);
 
