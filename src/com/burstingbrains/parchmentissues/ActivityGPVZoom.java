@@ -214,7 +214,6 @@ public class ActivityGPVZoom extends ActivityMainMenu {
 	// ====================
 	private Runnable runnableTicker = new Runnable() {
 		@Override public void run() {
-			Log.d("ActivityGPVZoom", "tick()");
 			adapter.notifyDataSetChanged();
 			handler.postDelayed(runnableTicker, 1000);
 		}
