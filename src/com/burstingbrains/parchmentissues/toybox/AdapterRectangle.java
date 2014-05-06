@@ -1,10 +1,14 @@
 package com.burstingbrains.parchmentissues.toybox;
 
+import java.util.Random;
+
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.burstingbrains.parchmentissues.R;
@@ -50,12 +54,16 @@ public class AdapterRectangle extends BaseAdapter {
 				
 		if (convertView == null) {
 			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.view_rectangle2, null);
+			convertView = inflater.inflate(R.layout.view_rectangle, null);
 		}
 		
-		int itemAsInt = getItem(position);
+		Random random = new Random(); 
+		int colorHex = Color.argb(200, random.nextInt(256), random.nextInt(256), random.nextInt(256));
+		LinearLayout llInnerRect = (LinearLayout) convertView.findViewById(R.id.view_rectangle_innerRect);
+		llInnerRect.setBackgroundColor(colorHex);
 		
-		TextView tvText = (TextView) convertView.findViewById(R.id.view_rectangle2_text);
+		int itemAsInt = getItem(position);
+		TextView tvText = (TextView) convertView.findViewById(R.id.view_rectangle_text);
 		tvText.setText("Value: " + itemAsInt);
 		
 		return convertView;

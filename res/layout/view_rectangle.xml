@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/view_rectangle_innerRect"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/holo_green_light"
@@ -14,7 +15,7 @@
         android:layout_margin="2dp" >
         
         <TextView 
-            android:id="@+id/view_rectangle2_text"
+            android:id="@+id/view_rectangle_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello" />
