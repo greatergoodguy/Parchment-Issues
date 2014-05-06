@@ -14,9 +14,15 @@ public class AdapterRectangle extends BaseAdapter {
 	Context context;
 	int size;
 	
+	int offset;
+	boolean hasStableIds;
+	
 	public AdapterRectangle(Context context, int size) {
 		this.context = context;
 		this.size = size;
+		
+		offset = 0;
+		hasStableIds = false;
 	}
 	
 	public void setSizeAndNotifyDataSetChanged(int size) {
@@ -31,7 +37,7 @@ public class AdapterRectangle extends BaseAdapter {
 
 	@Override
 	public Integer getItem(int position) {
-		return position;
+		return position + offset;
 	}
 
 	@Override
@@ -47,10 +53,25 @@ public class AdapterRectangle extends BaseAdapter {
 			convertView = inflater.inflate(R.layout.view_rectangle2, null);
 		}
 		
+		int itemAsInt = getItem(position);
+		
 		TextView tvText = (TextView) convertView.findViewById(R.id.view_rectangle2_text);
-		tvText.setText("Position: " + position);
+		tvText.setText("Value: " + itemAsInt);
 		
 		return convertView;
 	}
+	
+	@Override
+	public boolean hasStableIds() {
+		return hasStableIds;
+	}
 
+	public void setHasStableIds(boolean hasStableIds) {
+		this.hasStableIds = hasStableIds;
+	}
+	
+	public void increaseOffsetAndNotifyDataSetChanged() {
+		offset++;
+		notifyDataSetChanged();
+	}
 }

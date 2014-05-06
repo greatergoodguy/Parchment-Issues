@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mobi.parchment.widget.adapterview.gridpatternview.GridPatternItemDefinition;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.ScaleGestureDetector;
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener;
 import android.view.View;
@@ -101,7 +105,6 @@ public class ActivityGPVZoom extends ActivityMainMenu {
     	super.onPause();
     	handler.removeCallbacks(runnableTicker);
     }
-    
     
     // =============
     // Zoom Methods
@@ -209,12 +212,42 @@ public class ActivityGPVZoom extends ActivityMainMenu {
         adapter.setSizeAndNotifyDataSetChanged(7);	
     }
     
+	// ==========
+	// Menu
+	// ==========
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu_gpvzoom, menu);
+		return true;
+	}
+    
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent intent;
+		switch (item.getItemId()) {
+
+		case R.id.menu_gpvzoom_hasStableIdsTrue:
+			adapter.setHasStableIds(true);
+			return true;
+			
+		case R.id.menu_gpvzoom_hasStableIdsFalse:
+			adapter.setHasStableIds(false);
+			return true;
+			
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+			
+			
+	
 	// ====================
 	// Runnable
 	// ====================
 	private Runnable runnableTicker = new Runnable() {
 		@Override public void run() {
-			adapter.notifyDataSetChanged();
+			adapter.increaseOffsetAndNotifyDataSetChanged();
 			handler.postDelayed(runnableTicker, 1000);
 		}
 	};

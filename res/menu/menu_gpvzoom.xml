@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.burstingbrains.parchmentissues.ActivityMainMenu" >
+
+    <item
+        android:id="@+id/menu_gpvzoom_hasStableIdsTrue"
+        android:showAsAction="never"
+        android:title="HasStableIds = True" />
+    
+    <item
+        android:id="@+id/menu_gpvzoom_hasStableIdsFalse"
+        android:showAsAction="never"
+        android:title="HasStableIds = False" />
+    
+</menu>
