@@ -7,7 +7,7 @@
     
     <TextView 
         style="@style/wrap"
-        android:text="Having a view above a GridPatternView seems to cause issues with the fling gesture on the GridPatternView."/>
+        android:text="Looking Good!"/>
     
     <mobi.parchment.widget.adapterview.gridpatternview.GridPatternView
         android:id="@+id/issue1_gpv"
