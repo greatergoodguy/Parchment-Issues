@@ -18,15 +18,13 @@ public class AdapterRectangle extends BaseAdapter {
 	Context context;
 	int size;
 	
-	int offset;
-	boolean hasStableIds;
+	int offset;	
 	
 	public AdapterRectangle(Context context, int size) {
 		this.context = context;
 		this.size = size;
 		
 		offset = 0;
-		hasStableIds = false;
 	}
 	
 	public void setSizeAndNotifyDataSetChanged(int size) {
@@ -51,10 +49,9 @@ public class AdapterRectangle extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-				
 		if (convertView == null) {
 			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.view_rectangle, null);
+			convertView = inflater.inflate(R.layout.view_rectangle, parent, false);
 		}
 		
 		Random random = new Random(); 
@@ -67,15 +64,6 @@ public class AdapterRectangle extends BaseAdapter {
 		tvText.setText("Value: " + itemAsInt);
 		
 		return convertView;
-	}
-	
-	@Override
-	public boolean hasStableIds() {
-		return hasStableIds;
-	}
-
-	public void setHasStableIds(boolean hasStableIds) {
-		this.hasStableIds = hasStableIds;
 	}
 	
 	public void increaseOffsetAndNotifyDataSetChanged() {

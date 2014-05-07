@@ -200,12 +200,6 @@ public class ActivityGPVZoom extends ActivityMainMenu {
     	gridPatternView.clear();
     	
     	gridPatternItemDefinitions.add(new GridPatternItemDefinition(0, 0, 1, 1));
-        gridPatternItemDefinitions.add(new GridPatternItemDefinition(1, 0, 1, 1));
-        gridPatternItemDefinitions.add(new GridPatternItemDefinition(2, 0, 1, 1));
-        gridPatternItemDefinitions.add(new GridPatternItemDefinition(3, 0, 1, 1));
-        gridPatternItemDefinitions.add(new GridPatternItemDefinition(4, 0, 1, 1));
-        gridPatternItemDefinitions.add(new GridPatternItemDefinition(5, 0, 1, 1));
-        gridPatternItemDefinitions.add(new GridPatternItemDefinition(6, 0, 1, 1));
         gridPatternView.add(gridPatternItemDefinitions);
         gridPatternItemDefinitions.clear();
 		
@@ -226,15 +220,6 @@ public class ActivityGPVZoom extends ActivityMainMenu {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent;
 		switch (item.getItemId()) {
-
-		case R.id.menu_gpvzoom_hasStableIdsTrue:
-			adapter.setHasStableIds(true);
-			return true;
-			
-		case R.id.menu_gpvzoom_hasStableIdsFalse:
-			adapter.setHasStableIds(false);
-			return true;
-			
 		default:
 			return super.onOptionsItemSelected(item);
 		}

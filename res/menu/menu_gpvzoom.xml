@@ -5,11 +5,13 @@
     <item
         android:id="@+id/menu_gpvzoom_hasStableIdsTrue"
         android:showAsAction="never"
-        android:title="HasStableIds = True" />
+        android:title="HasStableIds = True"
+        android:visible="false" />
     
     <item
         android:id="@+id/menu_gpvzoom_hasStableIdsFalse"
         android:showAsAction="never"
-        android:title="HasStableIds = False" />
+        android:title="HasStableIds = False"
+        android:visible="false" />
     
 </menu>
